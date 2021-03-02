@@ -1,7 +1,6 @@
 import { Typography, CardContent, Card } from '@material-ui/core'
 import React, { forwardRef } from 'react'
 import './Message.css';
-import FlipMove from 'react-flip-move';
 
 
 
@@ -14,7 +13,7 @@ const Message = forwardRef(({message, username}, ref) => {
             <Card className={isUser ? "message__userCard" : "message__guestCard"}>
                 <CardContent>
                     <Typography color="white" varient="h5" component="h2">
-                    {message.username}: {message.message}
+                        {!isUser && `${message.username || 'Unknown User'}: `}{message.message}
                     </Typography>
                 </CardContent>
             </Card>
